@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Shop Bigzet Fashion House — Jallabiyah, Poedagar & G-shock watches, ready‑made attires, Yoruba and Jarad caps, plus exclusive accessories." />
+    <meta name="description" content="Shop Bigzet Fashion House — Jallabiyah, Poedagar & G-shock watches, ready‑made attires, Yoruba and Jarad caps." />
     <title>Catalog | Bigzet Fashion House</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍</text></svg>" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -39,12 +39,73 @@
         }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #faf9f8; color: #1a1a1a; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-        .hover-lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
-        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -8px rgba(0,0,0,0.08); }
+        /* ===== GLOBAL RESET ===== */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;               /* ← prevents any horizontal scrollbar */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf9f8;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hover-lift {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.08);
+        }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* ===== EXPLICIT GRID (no Tailwind grid classes) ===== */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr;               /* 1 column on small phones */
+            gap: 1.5rem;
+            width: 100%;
+        }
+        @media (min-width: 640px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .product-card {
+            min-width: 0;                             /* prevents overflow from children */
+            overflow: hidden;
+        }
+        .product-card.hidden-card {
+            display: none;
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            display: block;
+        }
+        /* Ensure the placeholder cards (with icons) keep the same aspect ratio */
+        .placeholder-image {
+            aspect-ratio: 3 / 4;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f3f1ef;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -62,98 +123,100 @@
     </header>
 
     <!-- Main Catalog -->
-    <main class="flex-grow max-w-6xl mx-auto px-4 md:px-6 py-section-mobile md:py-12 mb-20 md:mb-0">
+    <main class="flex-grow w-full max-w-6xl mx-auto px-4 md:px-6 py-section-mobile md:py-12 mb-20 md:mb-0" style="overflow-x: hidden;">
         <div class="flex flex-col gap-6 mb-12 md:mb-16">
             <div>
                 <h1 class="text-display-mobile md:text-display font-display text-text-primary">Our Collection</h1>
                 <p class="text-body-lg text-text-secondary max-w-xl mt-4">Jallabiyahs, timepieces, traditional caps, and exclusive accessories – crafted for distinction.</p>
             </div>
+            <!-- Category filters (horizontal scroll only for the buttons) -->
             <div class="flex gap-2 overflow-x-auto hide-scrollbar border-b border-border pb-2" role="tablist" aria-label="Filter by category">
-                <button class="whitespace-nowrap px-4 py-2 border-b-2 border-text-primary text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" role="tab" aria-selected="true">All</button>
-                <button class="whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" role="tab" aria-selected="false">Jallabiyah</button>
-                <button class="whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" role="tab" aria-selected="false">Wrist Watches</button>
-                <button class="whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" role="tab" aria-selected="false">Ready Made</button>
-                <button class="whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" role="tab" aria-selected="false">Caps</button>
-                <button class="whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" role="tab" aria-selected="false">Accessories</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 border-b-2 border-text-primary text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" data-filter="jallabiyah" role="tab" aria-selected="false">Jallabiyah</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" data-filter="watches" role="tab" aria-selected="false">Wrist Watches</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" data-filter="ready-made" role="tab" aria-selected="false">Ready Made</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" data-filter="caps" role="tab" aria-selected="false">Caps</button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" data-filter="accessories" role="tab" aria-selected="false">Accessories</button>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+        <!-- Product Grid -->
+        <div class="product-grid" id="product-grid">
             <!-- 1. Jallabiyah -->
-            <a href="#" class="group no-underline text-text-primary">
-                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+            <a href="#" class="product-card group no-underline text-text-primary" data-category="jallabiyah">
+                <div class="relative rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
                     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6zHq5kkNO67vmilYCsWvE31Kkc-BDiz3ASRmwjLiPXi5L_XRPHo0CUUvlQVt3LrxKjL8y356oiM_zaWVB8A90niPivGNTb1zFvY81FN9X62Av573z_D2dbPPOdQddly4th-UWRDTgrW9KvMJGNqPJXjBhw8t58Odv5miQNmO8A-ncwO6nHPNWVwVrPEbRlu8Bc7ixDiiNNdV_cbiZZF3B0jTnlJo0QsbXYp4imYGQIHKvkB8YFul8daLeuxmSoGmRNYU4PDRWMyR5"
-                         alt="Ready‑made Jallabiyah in premium flowy fabric" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                         alt="Ready‑made Jallabiyah in premium flowy fabric" class="product-image transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                 </div>
                 <span class="text-caption text-text-secondary uppercase">Jallabiyah</span>
                 <h3 class="font-medium text-body mt-1">Ready‑made Jallabiyah</h3>
                 <p class="font-semibold text-body">₦25,000</p>
             </a>
             <!-- 2. Poedagar Wristwatch -->
-            <a href="#" class="group no-underline text-text-primary">
-                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+            <a href="#" class="product-card group no-underline text-text-primary" data-category="watches">
+                <div class="relative rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
                     <span class="absolute top-3 left-3 bg-brand-gold text-white px-3 py-1 text-caption rounded-full z-10">New</span>
                     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuClDDK5um2JNaQLJnXhX3vU0t4XL6bfGnZlOW6IuzNeffAKXPBrsVq6u7PQnk-lXLF9soL4KathpIwSSBSMNCz9uYEZTgC5Bq0vnQNc9p_RJ48KSrQwhzzs3nTBWnFUCcMtcIzQ2rkLmhxG5uLCiBwxM65TLG-4IJgz7SwzJZPil1QISZEiift4pr0l5-XFTHhCKDw2czjrqa515VBtOovt-sY7Eoxox6IaYp3NPbNTACGr7VUVt3SeWiPgTDNNXEHr2kCo9oxmBrsQ"
-                         alt="Poedagar wristwatch – elegant and durable" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                         alt="Poedagar wristwatch – elegant and durable" class="product-image transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                 </div>
                 <span class="text-caption text-text-secondary uppercase">Wrist Watches</span>
                 <h3 class="font-medium text-body mt-1">Poedagar Wristwatch</h3>
                 <p class="font-semibold text-body">₦18,000</p>
             </a>
             <!-- 3. G‑shock -->
-            <a href="#" class="group no-underline text-text-primary">
-                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+            <a href="#" class="product-card group no-underline text-text-primary" data-category="watches">
+                <div class="relative rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
                     <span class="absolute top-3 left-3 bg-text-primary text-white px-3 py-1 text-caption rounded-full z-10">Best Seller</span>
                     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBaRaHLBXM5YG3jiXxzCpDRbkQYpx93wOz64JgZ93Yp4fhzx_PATdX_15it2ur9vHsQ9aC0IUQ7BSIwatzews4K2MSOlWe3hDGVXSlaZ2VVa9eTgR5bdNGQj0ey3eoFL-i6nS8_pgs7TvrEWx7Cem81eJeNrLsovcKinSEmGox-p8aHHdKeHUIrStfc12Hxe2znMSS5kgFqe1AihapiiDZN0_3OKnWKrFaRSXJtZ2UpnQi0Bq5pvg43IqzGVBleS9DwS5xXelVHgxv"
-                         alt="G‑shock wristwatch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                         alt="G‑shock wristwatch" class="product-image transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                 </div>
                 <span class="text-caption text-text-secondary uppercase">Wrist Watches</span>
                 <h3 class="font-medium text-body mt-1">G‑shock Wristwatch</h3>
                 <p class="font-semibold text-body">₦30,000</p>
             </a>
             <!-- 4. Ready Made Kaftan -->
-            <a href="#" class="group no-underline text-text-primary">
-                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+            <a href="#" class="product-card group no-underline text-text-primary" data-category="ready-made">
+                <div class="relative rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
                     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuARXfB2qXeFkyVo-CI53rcBD4A6m0BTPK-4DfJXThWjpOoP0NTukvZco5yVR9F2UoJTreTzUpeyfdm5yT9sxa_nMJvvKnCAFv2F5FiRJWul_9lmlM5Lg3Ci85PgQSZVX_DDnIXxyWEo_-4QLtkWrDVsIXDU4_TtlmpX6N8TrY2DqgErIc50VL0uW_NzndKwR6XVBYZi2H6GKpUf7TOgEjbqkr7d353mHHCgFzGgecsb707WId1Bnbo1qyEZ2KopjX5V81Rp_ycsCyQN"
-                         alt="Ready‑made kaftan set" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                         alt="Ready‑made kaftan set" class="product-image transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                 </div>
                 <span class="text-caption text-text-secondary uppercase">Ready Made</span>
                 <h3 class="font-medium text-body mt-1">Kaftan Set</h3>
                 <p class="font-semibold text-body">₦45,000</p>
             </a>
             <!-- 5. Yoruba Cap -->
-            <a href="#" class="group no-underline text-text-primary">
-                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+            <a href="#" class="product-card group no-underline text-text-primary" data-category="caps">
+                <div class="relative rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
                     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsGkritEuLgsogvG1-DFFatVb6XSj8ta5bcsSq0XjCVFvev6Y65HqwkasPPsLanJKFOcVi4jr16AsPq4spbfrpPVy6EKhZUSD4I6l1siSOzPXPfKbwVFMnEDRJuA3MlR1GOiehTli995s_Dl9hhOgI-KFgB07FuVPlPSIfzmgC7-VP9LYtq4dvD8608dZrJN8BcPntWFualWjuiFtxsNUTS5JvPkr4cPvEnjzfIkYie8BRqXnMbhmtx9gq_X_SE9BII_gaIS-_bUHx"
-                         alt="Hand‑stitched Yoruba cap" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                         alt="Hand‑stitched Yoruba cap" class="product-image transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                 </div>
                 <span class="text-caption text-text-secondary uppercase">Caps</span>
                 <h3 class="font-medium text-body mt-1">Yoruba Cap</h3>
                 <p class="font-semibold text-body">₦8,000</p>
             </a>
             <!-- 6. Jarad Cap -->
-            <a href="#" class="group no-underline text-text-primary">
-                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+            <a href="#" class="product-card group no-underline text-text-primary" data-category="caps">
+                <div class="relative rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
                     <span class="absolute top-3 left-3 bg-surface-muted text-text-primary px-3 py-1 text-caption rounded-full z-10">Exclusive</span>
                     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOUwkH0q0--YLY_LoAuHc6ShSU6eLEf9Iy8uzlGY6vvHejSQesxBVoDDXiorO7lIx49In2NmQj0PBDCHmVmjWWLoIng0RzRb83RyVtCRtw58-1zEc-naAklcK2sAs45BDOPd1Vu2EJto1BMMGQ41cr1tL3UaUaZCXPod6QknVidMXqxVyrHKdLkcdXPIxQb1Mn2_hbPznCLh8oV0wGleRWq8hdEc_KE1JXa5YmsS3XASAwFU0qGVAcUNLvvpWBQlpuF9jl2gdZryrY"
-                         alt="Jarad cap" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                         alt="Jarad cap" class="product-image transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                 </div>
                 <span class="text-caption text-text-secondary uppercase">Caps</span>
                 <h3 class="font-medium text-body mt-1">Jarad Cap</h3>
                 <p class="font-semibold text-body">₦7,500</p>
             </a>
-            <!-- 7. Filler: Leather Sandals -->
-            <a href="#" class="group no-underline text-text-primary">
-                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift flex items-center justify-center bg-surface-muted">
+            <!-- 7. Filler: Leather Sandals (placeholder) -->
+            <a href="#" class="product-card group no-underline text-text-primary" data-category="accessories">
+                <div class="relative rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift placeholder-image">
                     <span class="material-symbols-outlined text-6xl text-text-secondary">footprint</span>
                 </div>
                 <span class="text-caption text-text-secondary uppercase">Accessories</span>
                 <h3 class="font-medium text-body mt-1">Premium Leather Sandals</h3>
                 <p class="font-semibold text-body">₦12,000</p>
             </a>
-            <!-- 8. Filler: Cufflinks -->
-            <a href="#" class="group no-underline text-text-primary">
-                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift flex items-center justify-center bg-surface-muted">
+            <!-- 8. Filler: Cufflinks (placeholder) -->
+            <a href="#" class="product-card group no-underline text-text-primary" data-category="accessories">
+                <div class="relative rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift placeholder-image">
                     <span class="material-symbols-outlined text-6xl text-text-secondary">diamond</span>
                 </div>
                 <span class="text-caption text-text-secondary uppercase">Accessories</span>
@@ -175,7 +238,7 @@
         </div>
     </footer>
 
-    <!-- Mobile Bottom Nav (Home, Shop, Expert only) -->
+    <!-- Mobile Bottom Nav -->
     <nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface/90 backdrop-blur-md border-t border-border flex justify-around items-center h-16">
         <a href="./index.html" class="flex flex-col items-center text-text-secondary">
             <span class="material-symbols-outlined">home</span>
@@ -197,5 +260,49 @@
        aria-label="Chat on WhatsApp">
         <span class="material-symbols-outlined">forum</span>
     </a>
+
+    <!-- Filter JavaScript -->
+    <script>
+        (function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            function setActiveButton(activeBtn) {
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('border-text-primary', 'text-text-primary');
+                    btn.classList.add('border-transparent', 'text-text-secondary');
+                    btn.setAttribute('aria-selected', 'false');
+                });
+                activeBtn.classList.remove('border-transparent', 'text-text-secondary');
+                activeBtn.classList.add('border-text-primary', 'text-text-primary');
+                activeBtn.setAttribute('aria-selected', 'true');
+            }
+
+            function filterProducts(category) {
+                productCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.classList.remove('hidden-card');
+                    } else {
+                        card.classList.add('hidden-card');
+                    }
+                });
+            }
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    setActiveButton(this);
+                    filterProducts(filter);
+                });
+            });
+
+            // Activate "All" on load
+            const defaultBtn = document.querySelector('.filter-btn[data-filter="all"]');
+            if (defaultBtn) {
+                setActiveButton(defaultBtn);
+                filterProducts('all');
+            }
+        })();
+    </script>
 </body>
 </html>
