@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Shop Bigzet Fashion House — Jallabiyah, Poedagar & G-shock watches, ready‑made attires, Yoruba and Jarad caps, plus exclusive accessories." />
+    <title>Catalog | Bigzet Fashion House</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍</text></svg>" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { gold: '#735c00', 'gold-light': '#fed65b' },
+                        surface: '#faf9f8',
+                        'surface-muted': '#f3f1ef',
+                        border: '#e7e5e4',
+                        'text-primary': '#1a1a1a',
+                        'text-secondary': '#555555',
+                    },
+                    borderRadius: { DEFAULT: '0.5rem', xl: '0.75rem', '2xl': '1rem' },
+                    spacing: { section: '6rem', 'section-mobile': '4rem', gutter: '1.5rem' },
+                    fontFamily: { display: ['Playfair Display', 'serif'], body: ['Inter', 'sans-serif'] },
+                    fontSize: {
+                        'display': ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+                        'display-mobile': ['2.5rem', { lineHeight: '1.15', fontWeight: '700' }],
+                        'h1': ['2.25rem', { lineHeight: '1.2', fontWeight: '600' }],
+                        'h2': ['1.5rem', { lineHeight: '1.3', fontWeight: '600' }],
+                        'body': ['1rem', { lineHeight: '1.6' }],
+                        'body-lg': ['1.125rem', { lineHeight: '1.6' }],
+                        'caption': ['0.75rem', { lineHeight: '1.5', letterSpacing: '0.05em', fontWeight: '600' }],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #faf9f8; color: #1a1a1a; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .hover-lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -8px rgba(0,0,0,0.08); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header (No cart) -->
+    <header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-border">
+        <div class="max-w-6xl mx-auto flex items-center justify-between h-16 md:h-20 px-4 md:px-6">
+            <a href="/" class="text-h2 font-display font-bold text-text-primary tracking-tight no-underline">Bigzet</a>
+            <nav class="hidden md:flex items-center gap-8 text-body font-medium text-text-secondary">
+                <a href="/" class="hover:text-text-primary transition-colors pb-1">Home</a>
+                <a href="/catalog" class="text-text-primary border-b-2 border-brand-gold pb-1" aria-current="page">Catalog</a>
+                <a href="/contact" class="hover:text-text-primary transition-colors pb-1">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Catalog -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 md:px-6 py-section-mobile md:py-12 mb-20 md:mb-0">
+        <div class="flex flex-col gap-6 mb-12 md:mb-16">
+            <div>
+                <h1 class="text-display-mobile md:text-display font-display text-text-primary">Our Collection</h1>
+                <p class="text-body-lg text-text-secondary max-w-xl mt-4">Jallabiyahs, timepieces, traditional caps, and exclusive accessories – crafted for distinction.</p>
+            </div>
+            <div class="flex gap-2 overflow-x-auto hide-scrollbar border-b border-border pb-2" role="tablist" aria-label="Filter by category">
+                <button class="whitespace-nowrap px-4 py-2 border-b-2 border-text-primary text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" role="tab" aria-selected="true">All</button>
+                <button class="whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" role="tab" aria-selected="false">Jallabiyah</button>
+                <button class="whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" role="tab" aria-selected="false">Wrist Watches</button>
+                <button class="whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" role="tab" aria-selected="false">Ready Made</button>
+                <button class="whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" role="tab" aria-selected="false">Caps</button>
+                <button class="whitespace-nowrap px-4 py-2 border-b-2 border-transparent text-text-secondary hover:text-text-primary font-medium text-caption uppercase bg-transparent transition-colors" role="tab" aria-selected="false">Accessories</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+            <!-- Product cards (same list as before but without wishlist references) -->
+            <!-- 1. Jallabiyah -->
+            <a href="#" class="group no-underline text-text-primary">
+                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6zHq5kkNO67vmilYCsWvE31Kkc-BDiz3ASRmwjLiPXi5L_XRPHo0CUUvlQVt3LrxKjL8y356oiM_zaWVB8A90niPivGNTb1zFvY81FN9X62Av573z_D2dbPPOdQddly4th-UWRDTgrW9KvMJGNqPJXjBhw8t58Odv5miQNmO8A-ncwO6nHPNWVwVrPEbRlu8Bc7ixDiiNNdV_cbiZZF3B0jTnlJo0QsbXYp4imYGQIHKvkB8YFul8daLeuxmSoGmRNYU4PDRWMyR5"
+                         alt="Ready‑made Jallabiyah in premium flowy fabric" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+                <span class="text-caption text-text-secondary uppercase">Jallabiyah</span>
+                <h3 class="font-medium text-body mt-1">Ready‑made Jallabiyah</h3>
+                <p class="font-semibold text-body">₦25,000</p>
+            </a>
+            <!-- 2. Poedagar Wristwatch -->
+            <a href="#" class="group no-underline text-text-primary">
+                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+                    <span class="absolute top-3 left-3 bg-brand-gold text-white px-3 py-1 text-caption rounded-full z-10">New</span>
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuClDDK5um2JNaQLJnXhX3vU0t4XL6bfGnZlOW6IuzNeffAKXPBrsVq6u7PQnk-lXLF9soL4KathpIwSSBSMNCz9uYEZTgC5Bq0vnQNc9p_RJ48KSrQwhzzs3nTBWnFUCcMtcIzQ2rkLmhxG5uLCiBwxM65TLG-4IJgz7SwzJZPil1QISZEiift4pr0l5-XFTHhCKDw2czjrqa515VBtOovt-sY7Eoxox6IaYp3NPbNTACGr7VUVt3SeWiPgTDNNXEHr2kCo9oxmBrsQ"
+                         alt="Poedagar wristwatch – elegant and durable" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+                <span class="text-caption text-text-secondary uppercase">Wrist Watches</span>
+                <h3 class="font-medium text-body mt-1">Poedagar Wristwatch</h3>
+                <p class="font-semibold text-body">₦18,000</p>
+            </a>
+            <!-- 3. G‑shock -->
+            <a href="#" class="group no-underline text-text-primary">
+                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+                    <span class="absolute top-3 left-3 bg-text-primary text-white px-3 py-1 text-caption rounded-full z-10">Best Seller</span>
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBaRaHLBXM5YG3jiXxzCpDRbkQYpx93wOz64JgZ93Yp4fhzx_PATdX_15it2ur9vHsQ9aC0IUQ7BSIwatzews4K2MSOlWe3hDGVXSlaZ2VVa9eTgR5bdNGQj0ey3eoFL-i6nS8_pgs7TvrEWx7Cem81eJeNrLsovcKinSEmGox-p8aHHdKeHUIrStfc12Hxe2znMSS5kgFqe1AihapiiDZN0_3OKnWKrFaRSXJtZ2UpnQi0Bq5pvg43IqzGVBleS9DwS5xXelVHgxv"
+                         alt="G‑shock wristwatch" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+                <span class="text-caption text-text-secondary uppercase">Wrist Watches</span>
+                <h3 class="font-medium text-body mt-1">G‑shock Wristwatch</h3>
+                <p class="font-semibold text-body">₦30,000</p>
+            </a>
+            <!-- 4. Ready Made Kaftan -->
+            <a href="#" class="group no-underline text-text-primary">
+                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuARXfB2qXeFkyVo-CI53rcBD4A6m0BTPK-4DfJXThWjpOoP0NTukvZco5yVR9F2UoJTreTzUpeyfdm5yT9sxa_nMJvvKnCAFv2F5FiRJWul_9lmlM5Lg3Ci85PgQSZVX_DDnIXxyWEo_-4QLtkWrDVsIXDU4_TtlmpX6N8TrY2DqgErIc50VL0uW_NzndKwR6XVBYZi2H6GKpUf7TOgEjbqkr7d353mHHCgFzGgecsb707WId1Bnbo1qyEZ2KopjX5V81Rp_ycsCyQN"
+                         alt="Ready‑made kaftan set" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+                <span class="text-caption text-text-secondary uppercase">Ready Made</span>
+                <h3 class="font-medium text-body mt-1">Kaftan Set</h3>
+                <p class="font-semibold text-body">₦45,000</p>
+            </a>
+            <!-- 5. Yoruba Cap -->
+            <a href="#" class="group no-underline text-text-primary">
+                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsGkritEuLgsogvG1-DFFatVb6XSj8ta5bcsSq0XjCVFvev6Y65HqwkasPPsLanJKFOcVi4jr16AsPq4spbfrpPVy6EKhZUSD4I6l1siSOzPXPfKbwVFMnEDRJuA3MlR1GOiehTli995s_Dl9hhOgI-KFgB07FuVPlPSIfzmgC7-VP9LYtq4dvD8608dZrJN8BcPntWFualWjuiFtxsNUTS5JvPkr4cPvEnjzfIkYie8BRqXnMbhmtx9gq_X_SE9BII_gaIS-_bUHx"
+                         alt="Hand‑stitched Yoruba cap" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+                <span class="text-caption text-text-secondary uppercase">Caps</span>
+                <h3 class="font-medium text-body mt-1">Yoruba Cap</h3>
+                <p class="font-semibold text-body">₦8,000</p>
+            </a>
+            <!-- 6. Jarad Cap -->
+            <a href="#" class="group no-underline text-text-primary">
+                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+                    <span class="absolute top-3 left-3 bg-surface-muted text-text-primary px-3 py-1 text-caption rounded-full z-10">Exclusive</span>
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOUwkH0q0--YLY_LoAuHc6ShSU6eLEf9Iy8uzlGY6vvHejSQesxBVoDDXiorO7lIx49In2NmQj0PBDCHmVmjWWLoIng0RzRb83RyVtCRtw58-1zEc-naAklcK2sAs45BDOPd1Vu2EJto1BMMGQ41cr1tL3UaUaZCXPod6QknVidMXqxVyrHKdLkcdXPIxQb1Mn2_hbPznCLh8oV0wGleRWq8hdEc_KE1JXa5YmsS3XASAwFU0qGVAcUNLvvpWBQlpuF9jl2gdZryrY"
+                         alt="Jarad cap" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+                <span class="text-caption text-text-secondary uppercase">Caps</span>
+                <h3 class="font-medium text-body mt-1">Jarad Cap</h3>
+                <p class="font-semibold text-body">₦7,500</p>
+            </a>
+            <!-- 7. Filler: Leather Sandals -->
+            <a href="#" class="group no-underline text-text-primary">
+                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift flex items-center justify-center bg-surface-muted">
+                    <span class="material-symbols-outlined text-6xl text-text-secondary">footprint</span>
+                </div>
+                <span class="text-caption text-text-secondary uppercase">Accessories</span>
+                <h3 class="font-medium text-body mt-1">Premium Leather Sandals</h3>
+                <p class="font-semibold text-body">₦12,000</p>
+            </a>
+            <!-- 8. Filler: Cufflinks -->
+            <a href="#" class="group no-underline text-text-primary">
+                <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift flex items-center justify-center bg-surface-muted">
+                    <span class="material-symbols-outlined text-6xl text-text-secondary">diamond</span>
+                </div>
+                <span class="text-caption text-text-secondary uppercase">Accessories</span>
+                <h3 class="font-medium text-body mt-1">Gold‑tone Cufflinks</h3>
+                <p class="font-semibold text-body">₦15,000</p>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-border py-8 md:py-6 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-caption text-text-secondary">
+            <span class="font-display font-bold text-text-primary text-base">Bigzet Fashion House</span>
+            <div class="flex gap-6">
+                <a href="tel:+2349032727217" class="hover:text-text-primary transition-colors">+2349032727217</a>
+                <a href="https://instagram.com/bigzettexiles" target="_blank" rel="noopener noreferrer" class="hover:text-text-primary transition-colors">Instagram</a>
+                <a href="#" class="hover:text-text-primary transition-colors">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Nav (only Home, Shop, Expert) -->
+    <nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface/90 backdrop-blur-md border-t border-border flex justify-around items-center h-16">
+        <a href="/" class="flex flex-col items-center text-text-secondary">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-caption">Home</span>
+        </a>
+        <a href="/catalog" class="flex flex-col items-center text-brand-gold" aria-current="page">
+            <span class="material-symbols-outlined">storefront</span>
+            <span class="text-caption">Shop</span>
+        </a>
+        <a href="/contact" class="flex flex-col items-center text-text-secondary">
+            <span class="material-symbols-outlined">chat</span>
+            <span class="text-caption">Expert</span>
+        </a>
+    </nav>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/2349032727217" target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-24 md:bottom-8 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-105 transition-transform z-50"
+       aria-label="Chat on WhatsApp">
+        <span class="material-symbols-outlined">forum</span>
+    </a>
+</body>
+</html>

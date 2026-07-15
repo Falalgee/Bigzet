@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bigzet Fashion House — Curated luxury for the modern gentleman. Premium attires, timeless timepieces, and distinguished accessories in Minna, Nigeria." />
+    <title>Bigzet Fashion House | Home</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { gold: '#735c00', 'gold-light': '#fed65b' },
+                        surface: '#faf9f8',
+                        'surface-muted': '#f3f1ef',
+                        border: '#e7e5e4',
+                        'text-primary': '#1a1a1a',
+                        'text-secondary': '#555555',
+                    },
+                    borderRadius: { DEFAULT: '0.5rem', xl: '0.75rem', '2xl': '1rem' },
+                    spacing: { section: '6rem', 'section-mobile': '4rem', gutter: '1.5rem' },
+                    fontFamily: { display: ['Playfair Display', 'serif'], body: ['Inter', 'sans-serif'] },
+                    fontSize: {
+                        'display': ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+                        'display-mobile': ['2.5rem', { lineHeight: '1.15', fontWeight: '700' }],
+                        'h1': ['2.25rem', { lineHeight: '1.2', fontWeight: '600' }],
+                        'h2': ['1.5rem', { lineHeight: '1.3', fontWeight: '600' }],
+                        'body': ['1rem', { lineHeight: '1.6' }],
+                        'body-lg': ['1.125rem', { lineHeight: '1.6' }],
+                        'caption': ['0.75rem', { lineHeight: '1.5', letterSpacing: '0.05em', fontWeight: '600' }],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf9f8;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hover-lift {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+    <!-- Header (No cart/shopping bag) -->
+    <header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-border">
+        <div class="max-w-6xl mx-auto flex items-center justify-between h-16 md:h-20 px-4 md:px-6">
+            <a href="/" class="text-h2 font-display font-bold text-text-primary tracking-tight no-underline">Bigzet</a>
+            <nav class="hidden md:flex items-center gap-8 text-body font-medium text-text-secondary">
+                <a href="/" class="text-text-primary border-b-2 border-brand-gold pb-1 transition-colors" aria-current="page">Home</a>
+                <a href="/catalog" class="hover:text-text-primary transition-colors pb-1">Catalog</a>
+                <a href="/contact" class="hover:text-text-primary transition-colors pb-1">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero -->
+        <section class="relative bg-surface-muted overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4 md:px-6 py-section-mobile md:py-section flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                <div class="md:w-1/2 space-y-6">
+                    <h1 class="text-display-mobile md:text-display font-display text-text-primary leading-none">
+                        Elegance<br />Redefined.
+                    </h1>
+                    <p class="text-body-lg text-text-secondary max-w-md">
+                        Curated luxury for the modern gentleman. Premium attires, timeless timepieces, and distinguished accessories.
+                    </p>
+                    <div class="flex gap-4 pt-4">
+                        <a href="/catalog" class="inline-flex items-center gap-2 bg-text-primary text-white px-6 py-3 rounded-full font-medium text-body hover:bg-opacity-90 transition-all">
+                            Explore Catalog
+                            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                        </a>
+                        <a href="/contact" class="inline-flex items-center gap-2 text-text-secondary border border-border px-6 py-3 rounded-full font-medium text-body hover:border-text-primary transition-all">
+                            Visit Store
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnO078EctnEFuXpvHHJoU4K9wFoAH2sAnH5eJeGVO2BNiqsfU4JzZK_du30W1_SCtmo6TqAg9KCUo4fRfvMtJyShwX9nl81Du8ZiKACJQb-5FSkYBKNVHAizAzK38WU7TUVxgsHatUshzrgapq3sMBjgxiBb7zeYaoo5GdHgcqURmoBUU78q6h4BfWoejAtWkyej3yOFLr3DasbQbqxaEfA_M2E2d7xMtGEpHJ3t907ZyLn9HSCdosM_LkmHTYDW4M6IlC28iRVlx0"
+                             alt="Confident model wearing a premium flowing Jallabiyah and a luxury G-shock watch, posed against minimalist architecture."
+                             class="w-full h-full object-cover"
+                             loading="eager" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="max-w-6xl mx-auto px-4 md:px-6 py-section-mobile md:py-section">
+            <h2 class="text-h2 font-display text-center mb-12 md:mb-16">Explore Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <a href="/catalog?category=jallabiyah" class="group relative block aspect-[4/5] rounded-2xl overflow-hidden bg-surface-muted hover-lift">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxsMaTfaPg2pjYaBW42hvb9v9tQdKisOe6VjqwqbT1l3WcY-dkQExMPgBVwv5MzIH23LOlri1vWF2Q9CXG5IgF8GYfwc0pXRrbB1wvsaSFaBkGx3R5v95b6XbaGAfoQpM4X5U9B_pBFu2Y2gqD2HHpvv4oldl1v-5bjApnHlHDK86PxvCqsa7kwrtryT8TpEe45SP8ceSw3ABVHH_nAeY4NuEC5_9qX5m1ZCPVD7jgjx2vZKLyzsZY43KwcNWfndfxhT6wxk4z2bd9"
+                         alt="Premium flowy Jallabiyah fabric texture" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-2xl font-display mb-1">Jallabiyah</h3>
+                        <span class="text-caption uppercase tracking-wider flex items-center gap-1 group-hover:underline">Discover <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+                    </div>
+                </a>
+                <a href="/catalog?category=watches" class="group relative block aspect-[4/5] rounded-2xl overflow-hidden bg-surface-muted hover-lift">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuClDDK5um2JNaQLJnXhX3vU0t4XL6bfGnZlOW6IuzNeffAKXPBrsVq6u7PQnk-lXLF9soL4KathpIwSSBSMNCz9uYEZTgC5Bq0vnQNc9p_RJ48KSrQwhzzs3nTBWnFUCcMtcIzQ2rkLmhxG5uLCiBwxM65TLG-4IJgz7SwzJZPil1QISZEiift4pr0l5-XFTHhCKDw2czjrqa515VBtOovt-sY7Eoxox6IaYp3NPbNTACGr7VUVt3SeWiPgTDNNXEHr2kCo9oxmBrsQ"
+                         alt="Luxury G-shock wrist watch on dark slate" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-2xl font-display mb-1">Wrist Watches</h3>
+                        <span class="text-caption uppercase tracking-wider flex items-center gap-1 group-hover:underline">View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+                    </div>
+                </a>
+                <a href="/catalog?category=caps" class="group relative block aspect-[4/5] rounded-2xl overflow-hidden bg-surface-muted hover-lift">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOUwkH0q0--YLY_LoAuHc6ShSU6eLEf9Iy8uzlGY6vvHejSQesxBVoDDXiorO7lIx49In2NmQj0PBDCHmVmjWWLoIng0RzRb83RyVtCRtw58-1zEc-naAklcK2sAs45BDOPd1Vu2EJto1BMMGQ41cr1tL3UaUaZCXPod6QknVidMXqxVyrHKdLkcdXPIxQb1Mn2_hbPznCLh8oV0wGleRWq8hdEc_KE1JXa5YmsS3XASAwFU0qGVAcUNLvvpWBQlpuF9jl2gdZryrY"
+                         alt="Hand-stitched traditional cap with intricate embroidery" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h3 class="text-2xl font-display mb-1">Caps</h3>
+                        <span class="text-caption uppercase tracking-wider flex items-center gap-1 group-hover:underline">Shop Now <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="bg-surface-muted py-section-mobile md:py-section" id="catalog">
+            <div class="max-w-6xl mx-auto px-4 md:px-6">
+                <div class="flex flex-wrap justify-between items-end mb-12 border-b border-border pb-6">
+                    <h2 class="text-h2 font-display">Featured Curations</h2>
+                    <a href="/catalog" class="text-caption text-text-secondary uppercase tracking-wider hover:text-text-primary transition-colors no-underline">View Full Catalog</a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                    <!-- Product 1: G-shock -->
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+                            <span class="absolute top-3 left-3 bg-text-primary text-white px-3 py-1 text-caption rounded-full z-10">Best Seller</span>
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBaRaHLBXM5YG3jiXxzCpDRbkQYpx93wOz64JgZ93Yp4fhzx_PATdX_15it2ur9vHsQ9aC0IUQ7BSIwatzews4K2MSOlWe3hDGVXSlaZ2VVa9eTgR5bdNGQj0ey3eoFL-i6nS8_pgs7TvrEWx7Cem81eJeNrLsovcKinSEmGox-p8aHHdKeHUIrStfc12Hxe2znMSS5kgFqe1AihapiiDZN0_3OKnWKrFaRSXJtZ2UpnQi0Bq5pvg43IqzGVBleS9DwS5xXelVHgxv"
+                                 alt="Durable shock-resistant G-shock wristwatch on minimalist background" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-caption text-text-secondary uppercase">Wrist Watches</span>
+                            <h3 class="font-medium text-body">G‑shock Wristwatch</h3>
+                            <p class="font-semibold text-body">₦30,000</p>
+                        </div>
+                    </div>
+                    <!-- Product 2: Jallabiyah -->
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6zHq5kkNO67vmilYCsWvE31Kkc-BDiz3ASRmwjLiPXi5L_XRPHo0CUUvlQVt3LrxKjL8y356oiM_zaWVB8A90niPivGNTb1zFvY81FN9X62Av573z_D2dbPPOdQddly4th-UWRDTgrW9KvMJGNqPJXjBhw8t58Odv5miQNmO8A-ncwO6nHPNWVwVrPEbRlu8Bc7ixDiiNNdV_cbiZZF3B0jTnlJo0QsbXYp4imYGQIHKvkB8YFul8daLeuxmSoGmRNYU4PDRWMyR5"
+                                 alt="Ready‑made Jallabiyah in premium flowy fabric" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-caption text-text-secondary uppercase">Jallabiyah</span>
+                            <h3 class="font-medium text-body">Ready‑made Jallabiyah</h3>
+                            <p class="font-semibold text-body">₦25,000</p>
+                        </div>
+                    </div>
+                    <!-- Product 3: Yoruba Cap -->
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+                            <span class="absolute top-3 left-3 bg-brand-gold text-white px-3 py-1 text-caption rounded-full z-10">Exclusive</span>
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsGkritEuLgsogvG1-DFFatVb6XSj8ta5bcsSq0XjCVFvev6Y65HqwkasPPsLanJKFOcVi4jr16AsPq4spbfrpPVy6EKhZUSD4I6l1siSOzPXPfKbwVFMnEDRJuA3MlR1GOiehTli995s_Dl9hhOgI-KFgB07FuVPlPSIfzmgC7-VP9LYtq4dvD8608dZrJN8BcPntWFualWjuiFtxsNUTS5JvPkr4cPvEnjzfIkYie8BRqXnMbhmtx9gq_X_SE9BII_gaIS-_bUHx"
+                                 alt="Hand‑stitched Yoruba cap with intricate embroidery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-caption text-text-secondary uppercase">Caps</span>
+                            <h3 class="font-medium text-body">Yoruba Cap</h3>
+                            <p class="font-semibold text-body">₦8,000</p>
+                        </div>
+                    </div>
+                    <!-- Product 4: Kaftan Set -->
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-white border border-border mb-4 hover-lift">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuARXfB2qXeFkyVo-CI53rcBD4A6m0BTPK-4DfJXThWjpOoP0NTukvZco5yVR9F2UoJTreTzUpeyfdm5yT9sxa_nMJvvKnCAFv2F5FiRJWul_9lmlM5Lg3Ci85PgQSZVX_DDnIXxyWEo_-4QLtkWrDVsIXDU4_TtlmpX6N8TrY2DqgErIc50VL0uW_NzndKwR6XVBYZi2H6GKpUf7TOgEjbqkr7d353mHHCgFzGgecsb707WId1Bnbo1qyEZ2KopjX5V81Rp_ycsCyQN"
+                                 alt="Ready‑made kaftan set – crisp tailoring" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-caption text-text-secondary uppercase">Ready Made</span>
+                            <h3 class="font-medium text-body">Kaftan Set</h3>
+                            <p class="font-semibold text-body">₦45,000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location -->
+        <section class="max-w-6xl mx-auto px-4 md:px-6 py-section-mobile md:py-section text-center">
+            <span class="material-symbols-outlined text-[48px] text-brand-gold mb-6">location_on</span>
+            <h2 class="text-h2 font-display mb-4">Experience in Person</h2>
+            <p class="text-body-lg text-text-secondary max-w-lg mx-auto">
+                Visit our atelier at Shop C4, Ikon Allah Plaza for personalized styling and exclusive collections.
+            </p>
+            <a href="/contact" class="inline-flex items-center gap-2 mt-8 text-text-primary font-medium hover:text-brand-gold transition-colors">
+                Get Directions <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-border py-8 md:py-6">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-caption text-text-secondary">
+            <span class="font-display font-bold text-text-primary text-base">Bigzet Fashion House</span>
+            <div class="flex gap-6">
+                <a href="tel:+2349032727217" class="hover:text-text-primary transition-colors">+2349032727217</a>
+                <a href="https://instagram.com/bigzettexiles" target="_blank" rel="noopener noreferrer" class="hover:text-text-primary transition-colors">Instagram</a>
+                <a href="#" class="hover:text-text-primary transition-colors">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Nav (Home, Shop, Expert only) -->
+    <nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface/90 backdrop-blur-md border-t border-border flex justify-around items-center h-16">
+        <a href="/" class="flex flex-col items-center text-brand-gold" aria-current="page">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-caption">Home</span>
+        </a>
+        <a href="/catalog" class="flex flex-col items-center text-text-secondary">
+            <span class="material-symbols-outlined">storefront</span>
+            <span class="text-caption">Shop</span>
+        </a>
+        <a href="/contact" class="flex flex-col items-center text-text-secondary">
+            <span class="material-symbols-outlined">chat</span>
+            <span class="text-caption">Expert</span>
+        </a>
+    </nav>
+
+    <!-- WhatsApp Concierge -->
+    <a href="https://wa.me/2349032727217" target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-24 md:bottom-8 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-105 transition-transform z-50"
+       aria-label="Chat on WhatsApp">
+        <span class="material-symbols-outlined">forum</span>
+    </a>
+</body>
+</html>
